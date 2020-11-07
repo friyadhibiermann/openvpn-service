@@ -1,1 +1,27 @@
-
+#!/bin/bash
+_PROSESS=$(ps -w | grep openvpn | head -1 | awk -F ' ' '{print $1}')
+function run_vpn(){
+openvpn --cd /etc/openvpn/ --config client-openwrt.ovpn --askpass /etc/openvpn/pass.txt > /dev/null 2>&1 &
+}
+function prosess_check(){
+status=`echo $(ps -w | grep openvpn | wc -l)`
+if [ ${status} == 2 ];then
+run_vpn
+echo "openvpn aktif"
+exit 0
+else
+echo "openvpn reconecting......"
+if [ ${status} -gt 4 ];then
+kill $_PROSESS > /dev/null 2>&1
+sleep 3
+run_vpn
+if [ $? == 0 ];then
+echo "vpn berhasil di jalankan"
+fi
+else
+run_vpn
+echo ${status}
+fi
+fi
+}
+prosess_check
