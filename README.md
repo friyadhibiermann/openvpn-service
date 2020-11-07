@@ -1,6 +1,6 @@
 # openvpn-service
 unix/linux openwrt cronjob every 6 hours
-<h2>menginstallasi program<h2>
+<h2>menginstallasi program</h2>
 <h3>menyimpan file</h3>
 <code>
 git clone https://github.com/friyadhibiermann/openvpn-service
@@ -13,7 +13,7 @@ ln -s $PWD/openvpn-service /usr/bin/openvpn-service
 <code>
 file=$(find - L $PWD/ -type f \( -iname \*.ovpn -o -iname \*.conf -iname \*.txt \));for i in $file;do mv $i /etc/openvpn/;done
 </code>
-<h3>test script<h3>
+<h3>test script</h3>
 <code>
 openvpn-service
 </code>
