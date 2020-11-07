@@ -21,7 +21,7 @@ openvpn-service
 <h3>schredule run program 1 time every 6 hours</h3>
 <code>
 crontab -e
-</code>
+</code><br>
 <code>
 0 */6 * * * openvpn-service
 </code>
