@@ -17,8 +17,8 @@ file=$(find - L $PWD/ -type f \( -iname \*.ovpn -o -iname \*.conf -iname \*.txt 
 <code>
 openvpn-service
 </code>
-<h2>mengatur crontab<h2>
-<h3>schredule run program 1 time every 6 hours<h3>
+<h2>mengatur crontab</h2>
+<h3>schredule run program 1 time every 6 hours</h3>
 <code>
 crontab -e
 </code>
